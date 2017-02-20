@@ -1,0 +1,171 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+html, body {
+    background-color: rgb(29, 30, 42);
+    font-family: "Roboto Mono", monospace;
+    height: 100%;
+}
+
+button {
+    outline: none;
+    border: 1px solid lightgray;
+    background: none;
+    color: lightgray;
+    border-radius: 100%;
+    cursor: pointer;
+    text-align: center;
+    vertical-align: middle;
+    transition: .1s ease;
+}
+
+button:hover {
+    border-color: white;
+    color: white;
+    border-style: double;
+    border-width: 4px;
+
+}
+button:active {
+    border-width: 6px;
+}
+.play {
+    width: 5em;
+    height: 5em;
+    font-size: 14pt;
+}
+
+.skip {
+    width: 4em;
+    height: 4em;
+    font-size: 14pt;
+    transition: border .1s, transform .3s;
+}
+
+#next:active {
+    transform: rotate(360deg);
+}
+
+#prev:active {
+    transform: rotate(-360deg);
+}
+
+#next:hover {
+    border-style: double solid double double;
+}
+
+#prev:hover {
+    border-style: double double double solid;
+}
+
+.play:hover {
+    border-style: double solid;
+    transform: rotate(180deg);
+}
+
+#center-container {
+    height: 90%;
+}
+
+#main {
+    width: 30em;
+    text-align: center;
+    border: 1px double white;
+    padding: 1em;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#tracklist {
+    margin-top: .5em;
+    color: lightgray;
+    transition: .1s ease;
+    -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+   -khtml-user-select: none; /* Konqueror HTML */
+     -moz-user-select: none; /* Firefox */
+      -ms-user-select: none; /* Internet Explorer/Edge */
+          user-select: none; /* Non-prefixed version, currently
+                                supported by Chrome and Opera */
+    max-height: 20vh;
+    overflow-y: scroll;
+}
+
+p {
+    -webkit-margin-before: 0px;
+    -webkit-margin-after: 0px;
+    margin-bottom: .5em;
+    transition: .1s ease;
+    display: inline-block;
+    cursor: pointer;
+}
+
+p:hover {
+    color: white;
+}
+
+#albumart {
+    width: 100%;
+    margin-bottom: .4em;
+}
+
+#trackbar {
+	background-color: white;
+	height: 2px;
+	width: 0px;
+}
+
+#trackbar-container {
+	padding-top: 20px;
+	padding-bottom: 20px;
+	width: 100%;
+    cursor: pointer;
+}
+
+#songinfo {
+    color: lightgray;
+    height: 3em;
+    overflow: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    border-bottom: 1px solid lightgray
+}
+
+
+.paused {
+    border-style: double solid !important;
+    border-width: 4px;
+    transform: rotate(180deg) !important;
+}
+
+.spinning {
+    -webkit-animation: rotation 10s infinite linear;
+}
+
+@-webkit-keyframes rotation {
+    from {-webkit-transform: rotate(0deg);}
+    to   {-webkit-transform: rotate(359deg);}
+}
